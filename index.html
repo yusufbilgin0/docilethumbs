@@ -52,7 +52,7 @@
   .meta-item span { font-size: 13px; font-weight: 500; }
   .hero-right { background: var(--ink); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
   .hero-visual { position: relative; width: 340px; height: 480px; }
-  .phone-frame { width: 220px; height: 440px; border: 2.5px solid rgba(255,255,255,0.15); border-radius: 32px; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); overflow: hidden; background: #111; }
+  .phone-frame { width: 220px; height: 440px; border: 2.5px solid rgba(255,255,255,0.15); border-radius: 32px; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); overflow: hidden; background: #111; z-index: 1; }
   .phone-screen { width: 100%; height: 100%; background: #000; display: flex; flex-direction: column; padding: 12px 8px; gap: 8px; overflow: hidden; }
   .scroll-content { animation: phoneScroll 8s linear infinite; display: flex; flex-direction: column; gap: 8px; }
   @keyframes phoneScroll { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
@@ -62,10 +62,10 @@
   .fake-post-bar { height: 32px; background: #111; display: flex; align-items: center; padding: 0 8px; gap: 6px; }
   .avatar-dot { width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,0.15); }
   .fake-line { height: 5px; border-radius: 3px; background: rgba(255,255,255,0.1); }
-  .float-stat { position: absolute; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 0.75rem 1rem; color: white; animation: floatUp 4s ease-in-out infinite; }
+  .float-stat { position: absolute; background: rgba(20,18,15,0.92); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; padding: 0.75rem 1rem; color: white; animation: floatUp 4s ease-in-out infinite; z-index: 3; backdrop-filter: blur(6px); box-shadow: 0 6px 24px rgba(0,0,0,0.35); }
   .float-stat:nth-child(2){animation-delay:-1.3s}.float-stat:nth-child(3){animation-delay:-2.6s}
   @keyframes floatUp { 0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)} }
-  .fs1{top:15%;right:-10px}.fs2{bottom:20%;left:-20px}
+  .fs1{top:8%;right:-30px}.fs2{bottom:12%;left:-40px}
   .float-stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--accent); line-height: 1; }
   .float-stat-label { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.05em; margin-top: 2px; }
   .hero-right::after { content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.08) 3px,rgba(0,0,0,0.08) 4px); pointer-events:none; }
@@ -674,7 +674,7 @@
       <div class="team-avatar" style="background:var(--ink)">ZC</div>
       <div>
         <div class="team-name">Zeynep Can</div>
-        <div class="team-role">Author</div>
+        <div class="team-role">Principal Investigator &amp; Lead Author</div>
         <div class="team-affil">Teachers College, Columbia University</div>
       </div>
     </div>
@@ -695,7 +695,6 @@
     <strong>Docile Thumbs: A Somaesthetic Inquiry</strong><br>
     Cognitive &amp; Affective Dimensions of Instagram Use &middot; Teachers College, Columbia University &middot; 2026
   </div>
-  <span class="doi-badge">DOI: 10.xxxx/placeholder</span>
 </footer>
 
 <script>
@@ -709,10 +708,10 @@ function closeMenu() {
 }
 
 const citations = {
-  apa: `Can, Z. (2026). Docile thumbs: A somaesthetic inquiry — Cognitive and affective dimensions of Instagram use. Teachers College, Columbia University. https://doi.org/10.xxxx/placeholder`,
-  mla: `Can, Zeynep. "Docile Thumbs: A Somaesthetic Inquiry — Cognitive and Affective Dimensions of Instagram Use." Teachers College, Columbia University, 2026. https://doi.org/10.xxxx/placeholder.`,
-  chicago: `Can, Zeynep. "Docile Thumbs: A Somaesthetic Inquiry — Cognitive and Affective Dimensions of Instagram Use." Teachers College, Columbia University, 2026. https://doi.org/10.xxxx/placeholder.`,
-  bibtex: `@techreport{can2026docile,\n  title   = {Docile Thumbs: A Somaesthetic Inquiry — Cognitive and Affective Dimensions of Instagram Use},\n  author  = {Can, Zeynep},\n  year    = {2026},\n  institution = {Teachers College, Columbia University},\n  doi     = {10.xxxx/placeholder}\n}`
+  apa: `Can, Z. (2026). Docile thumbs: A somaesthetic inquiry — Cognitive and affective dimensions of Instagram use. Teachers College, Columbia University.`,
+  mla: `Can, Zeynep. "Docile Thumbs: A Somaesthetic Inquiry — Cognitive and Affective Dimensions of Instagram Use." Teachers College, Columbia University, 2026.`,
+  chicago: `Can, Zeynep. "Docile Thumbs: A Somaesthetic Inquiry — Cognitive and Affective Dimensions of Instagram Use." Teachers College, Columbia University, 2026.`,
+  bibtex: `@techreport{can2026docile,\n  title   = {Docile Thumbs: A Somaesthetic Inquiry — Cognitive and Affective Dimensions of Instagram Use},\n  author  = {Can, Zeynep},\n  year    = {2026},\n  institution = {Teachers College, Columbia University}\n}`
 };
 function openCite() {
   document.getElementById('citeModal').classList.add('open');
