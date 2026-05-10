@@ -45,7 +45,7 @@
   .hero-actions { display: flex; gap: 1rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
   .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: white; border: none; border-radius: 4px; padding: 0.65rem 1.25rem; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: opacity 0.2s; }
   .btn-primary:hover { opacity: 0.88; }
-  .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 0.65rem 1.25rem; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 0.65rem 1.25rem; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; cursor: pointer; transition: border-color 0.2s, background 0.2s; text-decoration: none; }
   .btn-secondary:hover { border-color: var(--ink); background: rgba(14,13,11,0.04); }
   .hero-meta { display: flex; gap: 2.5rem; border-top: 1px solid var(--rule); padding-top: 2rem; flex-wrap: wrap; }
   .meta-item label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.25rem; }
@@ -208,38 +208,27 @@
   .inset-quote p { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-style: italic; line-height: 1.6; color: var(--ink); margin: 0; }
   .inset-quote cite { display: block; font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 0.5rem; font-style: normal; letter-spacing: 0.06em; }
 
-  /* DISCUSSION */
-  #discussion { background: var(--paper); border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
-  #discussion .section-label { }
-  .discussion-block { margin-bottom: 2.5rem; }
-  .discussion-block:last-child { margin-bottom: 0; }
-  .discussion-block h3 { margin-bottom: 0.75rem; }
-  .discussion-block p { font-size: 15px; color: var(--muted); line-height: 1.8; }
-  .big-pullquote { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; line-height: 1.5; border-top: 2px solid var(--accent); border-bottom: 1px solid var(--rule); padding: 2rem 0; color: var(--ink); margin-bottom: 2rem; }
-  .framework-cards { display: flex; flex-direction: column; gap: 1rem; }
-  .fw-card { border: 1px solid var(--rule); border-radius: 8px; padding: 1.5rem; background: var(--card); transition: border-color 0.3s; }
-  .fw-card:hover { border-color: var(--accent); }
-  .fw-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; display: block; }
-  .fw-card h4 { font-size: 14px; font-weight: 500; margin-bottom: 0.4rem; }
-  .fw-card p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0; }
+  /* DISCUSSION — single column flow */
+  #discussion { background: var(--paper); border-top: 1px solid var(--rule); }
+  #discussion .discussion-block { max-width: 820px; margin-bottom: 2.5rem; }
+  #discussion .discussion-block:last-child { margin-bottom: 0; }
+  #discussion .discussion-block h3 { margin-bottom: 0.75rem; }
+  #discussion .discussion-block p { font-size: 15px; color: var(--muted); line-height: 1.8; }
+  .big-pullquote { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; line-height: 1.5; border-top: 2px solid var(--accent); border-bottom: 1px solid var(--rule); padding: 2rem 0; color: var(--ink); margin: 2rem 0; max-width: 820px; }
 
-  /* CONCLUSION */
+  /* CONCLUSION — single column */
   #conclusion { background: var(--ink); color: white; border-top: 1px solid var(--rule); }
   #conclusion h2 { color: white; }
   #conclusion .section-label { color: var(--accent); }
   #conclusion .section-label::before { color: rgba(255,255,255,0.3); }
-  .conclusion-body { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 2.5rem; }
-  .conclusion-text p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.85; margin-bottom: 1.25rem; }
-  .conclusion-text p:last-child { margin-bottom: 0; }
-  .takeaway-list { display: flex; flex-direction: column; gap: 1.25rem; }
-  .takeaway { border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1.5rem; background: rgba(255,255,255,0.03); transition: background 0.3s; }
-  .takeaway:hover { background: rgba(255,255,255,0.06); }
-  .tk-num { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.4rem; display: block; }
-  .takeaway h4 { font-size: 14px; font-weight: 500; color: white; margin-bottom: 0.4rem; }
-  .takeaway p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6; margin: 0; }
-  .limitations-box { margin-top: 3rem; background: rgba(255,255,255,0.04); border-radius: 10px; padding: 2rem; border: 1px solid rgba(255,255,255,0.08); }
-  .limitations-box h3 { color: rgba(255,255,255,0.7); font-size: 1rem; font-family: 'DM Mono', monospace; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 400; margin-bottom: 1rem; }
-  .limitations-box p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 0.75rem; }
+  .conclusion-body { margin-top: 2.5rem; max-width: 820px; }
+  .conclusion-body p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.85; margin-bottom: 1.25rem; }
+  .conclusion-body p:last-child { margin-bottom: 0; }
+
+  /* LIMITATIONS — own section */
+  #limitations { background: var(--paper); border-top: 1px solid var(--rule); }
+  .limitations-box { margin-top: 2.5rem; max-width: 820px; background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 2.25rem; }
+  .limitations-box p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 1.1rem; }
   .limitations-box p:last-child { margin-bottom: 0; }
 
   /* REFERENCES */
@@ -274,7 +263,7 @@
     .hero{grid-template-columns:1fr;min-height:auto}.hero-right{display:none}
     section{padding:3rem 1.25rem}
     #abstract{grid-template-columns:1fr;gap:2rem}
-    .two-col-text,.methods-layout,.charts-grid,.analysis-grid,.conclusion-body,#discussion{grid-template-columns:1fr;gap:2rem}
+    .two-col-text,.methods-layout,.charts-grid,.analysis-grid{grid-template-columns:1fr;gap:2rem}
     .lit-sources,.likert-grid{grid-template-columns:1fr}
     .stats-row{grid-template-columns:1fr 1fr}
     .team-grid{max-width:100%}
@@ -286,6 +275,7 @@
     footer{flex-direction:column;gap:1rem;align-items:flex-start;padding:2rem 1.25rem}
     .modal{padding:1.5rem;width:95%}
     .data-intro{grid-template-columns:1fr}
+    .limitations-box{padding:1.5rem}
   }
   @media (max-width:480px) {
     .stats-row{grid-template-columns:1fr 1fr}
@@ -333,6 +323,7 @@
     <li><a href="#analysis">Analysis</a></li>
     <li><a href="#discussion">Discussion</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
+    <li><a href="#limitations">Limitations</a></li>
     <li><a href="#references">References</a></li>
     <li><a href="#team">Team</a></li>
   </ul>
@@ -349,6 +340,7 @@
   <a href="#analysis" onclick="closeMenu()">Analysis</a>
   <a href="#discussion" onclick="closeMenu()">Discussion</a>
   <a href="#conclusion" onclick="closeMenu()">Conclusion</a>
+  <a href="#limitations" onclick="closeMenu()">Limitations</a>
   <a href="#references" onclick="closeMenu()">References</a>
   <a href="#team" onclick="closeMenu()">Team</a>
 </div>
@@ -359,22 +351,18 @@
     <div class="hero-kicker">Mixed-Methods Pilot Study &mdash; 2026</div>
     <h1>Docile<br><em>Thumbs</em></h1>
     <div class="hero-subtitle">A Somaesthetic Inquiry: Cognitive and Affective Dimensions of Instagram Use</div>
-    <p class="hero-sub">What does Instagram do to the body that uses it? This study examines ephemeral consumption &mdash; the cognitive and affective residue of scroll-based platform engagement &mdash; through the lens of somaesthetics.</p>
+    <p class="hero-sub">From the perspective of somaesthetics, the philosophical study of the body as a site of aesthetic experience and sensory knowing (Shusterman, 1999), such affective outcomes may reflect a deeper failure that platform-mediated scrolling engages the body without satisfying it, producing stimulation in place of meaning.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="openCite()">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
         Cite this study
       </button>
-      <button class="btn-secondary" onclick="window.print()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download PDF
-      </button>
     </div>
     <div class="hero-meta">
-      <div class="meta-item"><label>Lead Researcher</label><span>Zeynep Can</span></div>
+      <div class="meta-item"><label>Author</label><span>Zeynep Can</span></div>
       <div class="meta-item"><label>Institution</label><span>Teachers College, Columbia</span></div>
-      <div class="meta-item"><label>Survey n</label><span>53 participants</span></div>
-      <div class="meta-item"><label>Interview n</label><span>5 participants</span></div>
+      <div class="meta-item"><label>Survey</label><span>53 participants</span></div>
+      <div class="meta-item"><label>Engagement sessions</label><span>5 participants</span></div>
     </div>
   </div>
   <div class="hero-right">
@@ -399,7 +387,7 @@
       </div>
       <div class="float-stat fs2">
         <div class="float-stat-num">2.25</div>
-        <div class="float-stat-label">mean &ldquo;worthwhile&rdquo; score / 5</div>
+        <div class="float-stat-label">post-use worthwhile score / 5</div>
       </div>
     </div>
   </div>
@@ -412,17 +400,16 @@
     <h2>The Scrolling Body<br>and What Remains</h2>
   </div>
   <div class="abstract-text reveal">
-    <p>This mixed-methods pilot study examines the cognitive and affective dimensions of Instagram use through the lens of somaesthetics &mdash; the philosophical study of the body as a site of aesthetic experience and sensory knowing (Shusterman, 1999). Combining a preliminary survey (n&nbsp;=&nbsp;53) with in-depth engagement sessions and interviews (n&nbsp;=&nbsp;5), the study investigates what scroll-based platform use does to the body that performs it.</p>
-    <p>The central finding is one of <em>ephemeral consumption</em>: content is encountered, processed to some minimal degree, and forgotten &mdash; while affective residue persists. The pooled recall rate across five participants was 11.1%, with spontaneous recall averaging only 5.9%. Post-session affect was consistently negative: the session was rated worthwhile at just 2.25 out of 5 (the lowest of all survey items), and satisfaction at 2.51. Survey data reveals that 92.5% of participants use Instagram lying down, 81.1% open the app out of habit, and 62.3% feel largely unaware of time passing while scrolling.</p>
-    <p>Drawing on Foucault&rsquo;s concept of disciplinary power and Shusterman&rsquo;s three-part somaesthetic framework &mdash; analytic, pragmatic, and practical &mdash; the study argues that the scrolling body is rendered docile by platform design, and that this docility structurally forecloses the conditions for satisfying aesthetic experience. The study offers somaesthetic attention as both a theoretical and practical corrective.</p>
+    <p>This study is designed as a mixed-methods pilot field experiment examining the cognitive and affective dimensions of Instagram use. Rather than imposing an artificial browsing environment, participants engage with Instagram on their own personal devices, allowing for naturalistic observation of habitual scrolling behavior supported by their personalized, trained algorithm. Data collection combines self-report surveys (n&nbsp;=&nbsp;53), and qualitative interviews (n&nbsp;=&nbsp;5). Participants are adult graduate students who have been using Instagram for at least three years.</p>
+    <p>The most striking finding of this study is revealed by the recall rates. When calculated as a pooled rate, the overall recall rate was 11.1%. When considering only unprompted recall, the pooled rate was lower at 5.9%, with participants spontaneously recalling approximately 4 items on average regardless of how much content they had viewed. This is alarming since it suggests that the volume of content encountered has little bearing on what the body actually retains.</p>
+    <p>Shusterman offers a consistent definition of somaesthetics that he deploys across articles and interviews alike: &ldquo;the critical, meliorative study of the experience and use of one&rsquo;s body as a locus of sensory-aesthetic appreciation (aisthesis) and creative self-fashioning&rdquo; (1999, p. 302). If, as Shusterman (1999) proposes, meaningful aesthetic experience requires embodied attention, presence, and intentionality, then a platform designed to suppress precisely these qualities does not merely risk making users unhappy, it structurally forecloses the conditions under which the experience could be satisfying at all. This study proceeds from that premise.</p>
     <div class="abstract-keywords">
       <span class="kw">Somaesthetics</span>
       <span class="kw">Instagram</span>
       <span class="kw">Doomscrolling</span>
       <span class="kw">Ephemeral Consumption</span>
-      <span class="kw">Memory &amp; Recall</span>
+      <span class="kw">Memory</span>
       <span class="kw">Disciplinary Power</span>
-      <span class="kw">Digital Well-being</span>
       <span class="kw">Foucault</span>
       <span class="kw">Shusterman</span>
     </div>
@@ -432,17 +419,13 @@
 <!-- INTRODUCTION -->
 <section id="introduction">
   <div class="section-label reveal" data-num="01 &middot;">Introduction</div>
-  <h2 class="reveal">Platform-Mediated Scrolling<br>and the Failure of Somatic Attention</h2>
+  <h2 class="reveal">Introduction</h2>
   <div class="two-col-text reveal">
     <div>
-      <p>Social media platforms have become central to everyday life, often occupying significant portions of users&rsquo; daily attention. From the perspective of somaesthetics &mdash; the philosophical study of the body as a site of aesthetic experience and sensory knowing (Shusterman, 1999) &mdash; such affective outcomes may reflect a deeper failure: platform-mediated scrolling engages the body without satisfying it, producing stimulation in place of meaning.</p>
-      <p>This dissatisfaction extends beyond mood. Interactions with social media tend to produce what this study calls <em>ephemeral consumption</em> &mdash; experiences that are immediately engaging but leave little lasting cognitive trace. Unlike reading, conversation, or other embodied practices that generate durable knowledge, the scroll-based encounter with content arrives faster than it can be processed; attention is distributed rather than concentrated, and the body is held in a posture of passive receptivity trained into, in Foucault&rsquo;s (1975) terms, docility.</p>
-      <p>The result is an experience that consumes time and attention while returning neither knowledge nor aesthetic fulfillment. The body is present but experientially absent &mdash; used without being lived in.</p>
+      <p>In recent years, social media platforms have become central to everyday life, often occupying significant portions of users&rsquo; daily attention. From the perspective of somaesthetics, the philosophical study of the body as a site of aesthetic experience and sensory knowing (Shusterman, 1999), such affective outcomes may reflect a deeper failure that platform-mediated scrolling engages the body without satisfying it, producing stimulation in place of meaning. This dissatisfaction extends beyond mood. Interactions with social media tend to produce what is called ephemeral consumption, experiences that are immediately engaging but leave little lasting cognitive trace. Unlike reading, conversation, or other embodied practices that generate durable knowledge, the scroll-based encounter with content arrives faster than it can be processed, attention is distributed rather than concentrated, and the body is held in a posture of passive receptivity trained into, in Foucault&rsquo;s (1975) terms, docility. The result is an experience that consumes time and attention while returning neither knowledge nor aesthetic fulfillment.</p>
     </div>
     <div>
-      <div class="pullquote">&ldquo;The scroll-based encounter with content arrives faster than it can be processed &mdash; attention is distributed rather than concentrated, and the body is rendered docile.&rdquo;</div>
-      <p>This study proceeds from a simple but underexplored question: not only how does Instagram use make people <em>feel</em>, but what does it do to the body as a site of sensory knowing? If, as Shusterman (1999) proposes, meaningful aesthetic experience requires embodied attention, presence, and intentionality, then a platform designed to suppress precisely these qualities does not merely risk making users unhappy &mdash; it structurally forecloses the conditions under which the experience could be satisfying at all.</p>
-      <p>Focusing on graduate students, this study combines quantitative survey data (n&nbsp;=&nbsp;53) with qualitative engagement sessions and interviews (n&nbsp;=&nbsp;5) to examine the somatic, cognitive, and affective dimensions of Instagram use in naturalistic conditions.</p>
+      <p>The existing literature thus establishes that doomscrolling produces consistent negative affective outcomes yet fails to account for why users continue despite dissatisfaction, or why the experience feels aesthetically hollow even when it is not technically harmful. Psychological frameworks alone cannot fully answer these questions because they locate the problem in the individual rather than in the nature of the experience itself. Somaesthetics offers a valuable lens to dissect this phenomenon. The question is not only how social media use makes people feel, but what it does to the body as a site of sensory knowing. Shusterman offers a consistent definition of somaesthetics that he deploys across articles and interviews alike: &ldquo;the critical, meliorative study of the experience and use of one&rsquo;s body as a locus of sensory-aesthetic appreciation (aisthesis) and creative self-fashioning&rdquo; (1999, p. 302). If, as Shusterman (1999) proposes, meaningful aesthetic experience requires embodied attention, presence, and intentionality, then a platform designed to suppress precisely these qualities does not merely risk making users unhappy, it structurally forecloses the conditions under which the experience could be satisfying at all. This study proceeds from that premise.</p>
     </div>
   </div>
 </section>
@@ -450,32 +433,13 @@
 <!-- LITERATURE REVIEW -->
 <section id="literature">
   <div class="section-label reveal" data-num="02 &middot;">Literature Review</div>
-  <h2 class="reveal">Doomscrolling, Well-being,<br>and the Somaesthetic Frame</h2>
+  <h2 class="reveal">Literature Review</h2>
   <div class="two-col-text reveal">
     <div>
-      <p>Instagram, one of the most widely used social media platforms globally, offers an interface optimized for continuous, low-friction consumption: an infinite vertical feed, algorithmically curated content, and strong visual stimulation combine to sustain engagement while discouraging deliberate, evaluative attention (Mildner et al., 2024). Preliminary research indicates that despite the time invested in scrolling, social media use is frequently accompanied by negative affective responses &mdash; including guilt, dissatisfaction, and a perception of wasted time (Vicente et al., 2024).</p>
-      <p>Yet despite these negative affective responses, Instagram remains the second most popular social network in the United States (Rajendra-Nicolucci &amp; Zuckerman, 2021). This persistence is itself a finding: if use were simply unpleasant, users would stop. Something more structural is at work.</p>
+      <p>Instagram, one of the most widely used social media platforms globally and a primary site of the scroll-based behavior colloquially known as &ldquo;doomscrolling&rdquo;, offers an interface optimized for continuous, low-friction consumption, an infinite vertical feed, algorithmically curated content, and strong visual stimulation combined to sustain engagement while discouraging deliberate, evaluative attention (Mildner et al, 2024). Preliminary research indicates that, despite the time invested in scrolling through content, social media use is frequently accompanied by negative affective responses, including guilt, dissatisfaction, and a perception of wasted time (Vicente et al., 2024). Despite the negative affective responses reported in various research, Instagram remains the second most popular social network in the US (Rajendra-Nicoluccu &amp; Zuckerman, 2021).</p>
     </div>
     <div>
-      <p>The broader literature on social media use and well-being presents a more ambiguous picture. Valkenburg (2022), reviewing 27 studies, found that general, active, and passive social media use showed weak or mixed associations with happiness, life satisfaction, depression, and anxiety &mdash; while only problematic or intensive use consistently correlated with lower well-being. This inconsistency reflects the need for more precise, person-specific approaches that distinguish between types of use and types of outcome.</p>
-      <p>Psychological frameworks alone cannot fully answer these questions because they locate the problem in the individual rather than in the nature of the experience itself. Somaesthetics offers a more structural lens &mdash; one that asks what scroll-based platforms do to the experiencing body, not merely what the body reports feeling about them afterward.</p>
-    </div>
-  </div>
-  <div class="lit-sources reveal">
-    <div class="lit-card">
-      <span class="lit-author">Shusterman, 1999</span>
-      <h4>Somaesthetics: A Disciplinary Proposal</h4>
-      <p>Defines somaesthetics as &ldquo;the critical, meliorative study of the experience and use of one&rsquo;s body as a locus of sensory-aesthetic appreciation.&rdquo; Proposes analytic, pragmatic, and practical dimensions of somatic inquiry.</p>
-    </div>
-    <div class="lit-card">
-      <span class="lit-author">Foucault, 1975</span>
-      <h4>Discipline and Punish</h4>
-      <p>Argues that disciplinary power operates through organization of space, time, and repetition into bodily routines so normalized they feel instinctive. The &ldquo;docile body&rdquo; framework applied here to platform design.</p>
-    </div>
-    <div class="lit-card">
-      <span class="lit-author">Vicente et al., 2024</span>
-      <h4>Mindless Scrolling, Goal Conflict &amp; Well-being</h4>
-      <p>Combining ESM and log-data, demonstrates that mindless scrolling creates goal conflict and guilt, with measurable effects on daily well-being outcomes for regular social media users.</p>
+      <p>The broader literature on social media use and well-being, however, presents a more ambiguous picture. Valkenburg (2022), in a review of 27 studies, found that general, active, and passive social media use showed weak or mixed associations with happiness, life satisfaction, depression, and anxiety, while only problematic or intensive use consistently correlated with lower well-being. This inconsistency, Valkenburg argues, reflects the need for more precise, person-specific approaches that distinguish between different types of use and outcome. These responses, either personal or communal, are not incidental; they point to something more fundamental about the nature of the experience. It suggests that the way one approaches the platform and the experience effects the emotional responses to it.</p>
     </div>
   </div>
 </section>
@@ -483,28 +447,28 @@
 <!-- METHODOLOGY -->
 <section id="methodology">
   <div class="section-label reveal" data-num="03 &middot;">Methodology</div>
-  <h2 class="reveal">A Mixed-Methods<br>Field Experiment</h2>
+  <h2 class="reveal">Methodology</h2>
   <div class="methods-layout">
     <div class="reveal">
       <div class="method-step">
         <span class="step-num">01</span>
         <div>
           <h3>Preliminary Survey <span style="font-weight:400;color:var(--muted);font-size:0.9em">(n = 53)</span></h3>
-          <p>Prior to the engagement task, participants completed a baseline survey collecting demographic information, self-reported weekly Instagram use (including screen time estimates), and contextual usage habits including posture, time of day, and physical setting. Participants also reported attitudes toward social media and typical affective responses following sessions.</p>
+          <p>Prior to the engagement task, participants completed a baseline survey collecting demographic information, self-reported weekly Instagram use (including screen time estimates), and contextual usage habits such as typical posture during use, preferred time of day, and physical setting (e.g., bed, desk, commute). Participants also reported their attitudes toward social media use and their typical affective responses following Instagram sessions, including perceived guilt, satisfaction, and productivity.</p>
         </div>
       </div>
       <div class="method-step">
         <span class="step-num">02</span>
         <div>
           <h3>Instagram Engagement Task <span style="font-weight:400;color:var(--muted);font-size:0.9em">(n = 5)</span></h3>
-          <p>Participants engaged in a 15-minute free-use Instagram session on their own personal devices. Sessions were screen-recorded to document all content viewed, and participants were filmed from a fixed angle to capture postural and somatic behavior. To avoid priming effects, participants were not informed in advance that memory would be tested.</p>
+          <p>Participants engaged in a 15-minute free-use Instagram session on their own devices. Sessions were screen-recorded to document all content viewed, and participants were filmed from a fixed angle to capture postural and somatic behavior during use. From a somaesthetics perspective (Shusterman, 2008), the posture and physical comportment of the scrolling body is not incidental but constitutive of the experience itself, reflecting the degree to which the body is alert, attentive, or rendered docile by the platform&rsquo;s rhythms (Foucault, 1975). It should be noted, however, that the presence of a camera may itself alter the somatic experience under observation. The implications of this methodological tension, and its unexpected theoretical relevance to the study&rsquo;s findings, are addressed in the limitations section.</p>
         </div>
       </div>
       <div class="method-step">
         <span class="step-num">03</span>
         <div>
           <h3>Unprompted Recall Task</h3>
-          <p>Immediately following the session, participants were asked to list all content they could remember &mdash; spontaneously and without cues. This yielded the unprompted recall rate, a measure of what the body retains from habitual scrolling under natural conditions.</p>
+          <p>Immediately following the session, participants were asked complete a structured recall test. Participants were asked to list all content they could remember from the session. This constituted the &ldquo;Unprompted Recall Task&rdquo;. To avoid priming effects, participants were not informed in advance that their memory were to be tested.</p>
         </div>
       </div>
       <div class="method-step">
@@ -518,26 +482,26 @@
         <span class="step-num">05</span>
         <div>
           <h3>Analysis</h3>
-          <p>Descriptive statistics, frequency distributions, and Pearson correlations were calculated using Microsoft Excel. Qualitative interview data were analyzed thematically, with verbatim excerpts used to illustrate and support theoretical claims. Screen recordings were coded to count total items viewed per participant.</p>
+          <p>All descriptive statistics, frequency distributions, and Pearson correlations reported in this study were calculated using Microsoft Excel. Qualitative data from the post-engagement interviews were analyzed thematically, and verbatim excerpts were used to illustrate and support the theoretical claims.</p>
         </div>
       </div>
     </div>
     <div class="method-visual reveal">
       <div class="tl-head">Session Protocol</div>
-      <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-time">Phase 1</div><div class="tl-label">Preliminary Survey</div><div class="tl-desc">Baseline habits, attitudes, affect (n = 53)</div></div></div>
-      <div class="timeline-item"><div class="tl-dot" style="background:#3a6b8a"></div><div><div class="tl-time">Phase 2 &mdash; T = 0:00</div><div class="tl-label">Screen &amp; camera recording begins</div><div class="tl-desc">Covert &mdash; participant unaware of memory test</div></div></div>
-      <div class="timeline-item"><div class="tl-dot" style="background:#3a6b8a"></div><div><div class="tl-time">T = 0:00 &ndash; 0:15</div><div class="tl-label">15-min Instagram engagement task</div><div class="tl-desc">Own device, personal feed, naturalistic</div></div></div>
-      <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-time">T = 0:15</div><div class="tl-label">Unprompted recall task</div><div class="tl-desc">Free recall with no cues</div></div></div>
-      <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-time">T = 0:20</div><div class="tl-label">Prompted recall task</div><div class="tl-desc">Specific posts, themes, accounts</div></div></div>
-      <div class="timeline-item"><div class="tl-dot" style="background:#3a6b8a"></div><div><div class="tl-time">T = 0:25</div><div class="tl-label">Affect &amp; somaesthetic interview</div><div class="tl-desc">Guilt, satisfaction, bodily awareness</div></div></div>
-      <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-time">Post-session</div><div class="tl-label">Screen recording coded</div><div class="tl-desc">Total items viewed; recall rate calculated</div></div></div>
+      <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-time">Phase 1</div><div class="tl-label">Preliminary Survey</div><div class="tl-desc">Demographics, usage habits, attitudes, baseline affect</div></div></div>
+      <div class="timeline-item"><div class="tl-dot" style="background:#3a6b8a"></div><div><div class="tl-time">Phase 2 &mdash; T = 0:00</div><div class="tl-label">Screen &amp; camera recording begins</div><div class="tl-desc">Participant not informed of memory test</div></div></div>
+      <div class="timeline-item"><div class="tl-dot" style="background:#3a6b8a"></div><div><div class="tl-time">T = 0:00 &ndash; 0:15</div><div class="tl-label">15-min Instagram engagement task</div><div class="tl-desc">Own device, personalized feed, 15 minutes</div></div></div>
+      <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-time">T = 0:15</div><div class="tl-label">Unprompted recall task</div><div class="tl-desc">List all remembered content, no cues</div></div></div>
+      <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-time">T = 0:20</div><div class="tl-label">Prompted recall task</div><div class="tl-desc">Prompted to describe specific posts, themes, accounts</div></div></div>
+      <div class="timeline-item"><div class="tl-dot" style="background:#3a6b8a"></div><div><div class="tl-time">T = 0:25</div><div class="tl-label">Affect &amp; somaesthetic interview</div><div class="tl-desc">Post-session affect and somatic reflection</div></div></div>
+      <div class="timeline-item"><div class="tl-dot"></div><div><div class="tl-time">Post-session</div><div class="tl-label">Screen recording coded</div><div class="tl-desc">Screen recording coded; recall rate = recalled &divide; viewed</div></div></div>
       <div class="sample-box">
-        <div class="sb-label">Phase 2 Sample Profile</div>
+        <div class="sb-label">Engagement Session Sample</div>
         <div class="sample-stats">
           <div class="ss"><strong>5</strong>Participants</div>
-          <div class="ss"><strong>7+ yrs</strong>All Instagram users</div>
-          <div class="ss"><strong>TC, CU</strong>Institution</div>
-          <div class="ss"><strong>Controlled</strong>Room &amp; chair</div>
+          <div class="ss"><strong>7+ yrs</strong>Instagram use, all participants</div>
+          <div class="ss"><strong>TC, Columbia</strong>Institution</div>
+          <div class="ss"><strong>Controlled</strong>Same room and chair</div>
         </div>
       </div>
     </div>
@@ -549,7 +513,7 @@
   <div class="section-label reveal" data-num="04 &middot;">Data &amp; Findings</div>
   <h2 class="reveal">Survey Results &amp;<br>Recall Data</h2>
   <div class="data-intro reveal">
-    <p>The preliminary survey (n&nbsp;=&nbsp;53) captured a geographically diverse but age-homogeneous sample of graduate students (M<sub>age</sub>&nbsp;=&nbsp;26.7, range&nbsp;=&nbsp;22&ndash;44). The engagement and recall phases (n&nbsp;=&nbsp;5) revealed uniformly low retention rates alongside consistently negative post-session affect. Together, the data support a pattern of habituated, purposeless, and somatically unaware use.</p>
+    <p>The preliminary survey (n&nbsp;=&nbsp;53) was completed by participants with a mean age of 26.7 years (median&nbsp;=&nbsp;26, range&nbsp;=&nbsp;22&ndash;44). The majority of respondents fell between the ages of 24 and 27, representing 83% of the sample. The sample was internationally distributed, with Turkey and the United States together representing approximately half of all respondents, followed by Italy, Germany, Sweden, Belgium, and France, among others. Notably, though the survey was conducted with participants using Instagram for at least 3 years, 83% of participants (44 out of 53) reported having used Instagram for seven or more years. Nearly all participants (98.1%) access Instagram through their personal phones. Weekly screen time averaged 7.67 hours (median&nbsp;=&nbsp;7), with 56.6% reporting six or more hours per week. Despite this substantial cumulative exposure, individual sessions tend to be short: 43.4% described a typical session as 5&ndash;15 minutes and 39.6% as 15&ndash;30 minutes, suggesting that Instagram use is characterized less by long uninterrupted sittings than by frequent, brief returns throughout the day.</p>
   </div>
 
   <div class="stats-row reveal">
@@ -559,7 +523,6 @@
     <div class="stat-box"><div class="stat-num">2.25<span>/5</span></div><div class="stat-label">Mean &ldquo;session worthwhile&rdquo;</div><div class="stat-bar" data-w="45"></div></div>
   </div>
 
-  <!-- FILTER -->
   <div class="filter-bar reveal">
     <span class="filter-label">View by theme:</span>
     <button class="filter-btn active" onclick="setFilter('all',this)">All findings</button>
@@ -570,50 +533,42 @@
   </div>
 
   <div class="charts-grid reveal" id="chartsGrid">
-
     <div class="chart-card" data-hyp="usage">
       <div class="chart-title">How participants open Instagram</div>
       <div class="chart-wrap"><canvas id="chartOpenHow"></canvas></div>
-      <div class="chart-caption">81.1% open Instagram out of habit &mdash; the single most common trigger. Only 24.5% report opening with a specific intention.</div>
+      <div class="chart-caption">81.1% of participants reported opening Instagram out of habit, and 90.6% said they do so without a specific purpose with 64.2% doing so often or always (M&nbsp;=&nbsp;3.70/5).</div>
     </div>
-
     <div class="chart-card" data-hyp="usage">
       <div class="chart-title">Typical session duration</div>
       <div class="chart-wrap"><canvas id="chartSession"></canvas></div>
-      <div class="chart-caption">83% of typical sessions last under 30 minutes, suggesting Instagram use is characterized by frequent, brief returns rather than extended sittings.</div>
+      <div class="chart-caption">43.4% described a typical session as 5&ndash;15 minutes and 39.6% as 15&ndash;30 minutes, suggesting that Instagram use is characterized less by long uninterrupted sittings than by frequent, brief returns throughout the day.</div>
     </div>
-
     <div class="chart-card" data-hyp="recall">
       <div class="chart-title">Content exposure vs. recall per participant</div>
       <div class="chart-wrap"><canvas id="chartRecall"></canvas></div>
-      <div class="chart-caption">Items viewed (blue) vastly outnumber items recalled (orange) across all participants. P4, who viewed the fewest items (32), recalled 43.8% &mdash; more than four times the pooled average.</div>
+      <div class="chart-caption">The number of content items viewed during the 15-minute session varied considerably, ranging from 32 to 108 items (M&nbsp;=&nbsp;77.4). P4&rsquo;s 43.8% recall rate suggests that the relationship between exposure and retention is not linear.</div>
     </div>
-
     <div class="chart-card" data-hyp="affect">
       <div class="chart-title">Post-session Likert scores (1&ndash;5 scale)</div>
       <div class="chart-wrap"><canvas id="chartLikert"></canvas></div>
-      <div class="chart-caption">Post-session items scored consistently below neutral. &ldquo;Session was worthwhile&rdquo; (2.25) and &ldquo;satisfaction&rdquo; (2.51) were the lowest. Content relevance scored highest (3.64), revealing a disconnect between perceived relevance and actual satisfaction.</div>
+      <div class="chart-caption">Post-use feelings of engagement being worthwhile scored the lowest of all survey items (M&nbsp;=&nbsp;2.25, SD&nbsp;=&nbsp;0.96, p&nbsp;&lt;&nbsp;.001) while post-use satisfaction followed closely (M&nbsp;=&nbsp;2.51, SD&nbsp;=&nbsp;1.03, p&nbsp;&lt;&nbsp;.01).</div>
     </div>
-
     <div class="chart-card" data-hyp="body">
       <div class="chart-title">Physical posture during use (% of participants)</div>
       <div class="chart-wrap"><canvas id="chartPosture"></canvas></div>
-      <div class="chart-caption">92.5% of participants use Instagram lying down &mdash; the posture most associated with rest and passivity. Only 9.4% use it standing.</div>
+      <div class="chart-caption">92.5% of participants who took the survey reported using Instagram lying down, which is the posture most associated with rest and passivity. 98.1% hold the device upright and 94.3% use only one hand.</div>
     </div>
-
     <div class="chart-card" data-hyp="body">
       <div class="chart-title">Time of day Instagram is most used</div>
       <div class="chart-wrap"><canvas id="chartTime"></canvas></div>
-      <div class="chart-caption">The two peak times &mdash; before sleep (79.2%) and before getting out of bed (60.4%) &mdash; frame the day&rsquo;s boundaries with habitual scrolling.</div>
+      <div class="chart-caption">The two most common times of use: 79.2% use Instagram in bed before sleep and 60.4% before getting out of bed in the morning.</div>
     </div>
-
   </div>
 
-  <!-- RECALL TABLE -->
   <div class="recall-section reveal">
     <div class="table-title">Table 1</div>
     <div class="table-label">Content Exposure and Recall Rates Across Participants</div>
-    <div class="table-caption">Data from the 15-minute Instagram engagement sessions (n&nbsp;=&nbsp;5). Overall recall rate = total recalled items &divide; total items viewed. Unprompted rate = items recalled without cues only.</div>
+    <div class="table-caption">Across the five participants who volunteered for the second and third phases of the study, overall recall rates ranged from 6.0% to 43.8%. When calculated as a pooled rate, the overall recall rate was 11.1%. When considering only unprompted recall, the pooled rate was lower at 5.9%.</div>
     <div class="table-wrapper">
       <table class="data-table">
         <thead>
@@ -636,147 +591,68 @@
         </tbody>
       </table>
     </div>
-    <p style="font-size:13px;color:var(--muted);margin-top:0.75rem;font-style:italic;">Note: P4&rsquo;s anomalous recall rate is addressed in the Analysis section. Highlighted values indicate the most theoretically significant data points.</p>
+    <p style="font-size:13px;color:var(--muted);margin-top:0.75rem;font-style:italic;">However, P4 represents a notable case. With the fewest items viewed (32) and the highest individual recall rate (43.8%), P4&rsquo;s pattern diverges significantly from the rest of the sample.</p>
   </div>
 </section>
 
 <!-- ANALYSIS -->
 <section id="analysis">
   <div class="section-label reveal" data-num="05 &middot;">Analysis</div>
-  <h2 class="reveal">Patterns, Correlations,<br>and the P4 Case</h2>
+  <h2 class="reveal">Analysis</h2>
   <div class="analysis-grid reveal">
     <div class="analysis-block">
-      <h3>Habituated, Purposeless Use</h3>
-      <p>Survey data points to a pattern of use that is largely automatic and without declared intent. 81.1% of participants reported opening Instagram out of habit, and 90.6% said they do so without a specific purpose &mdash; with 64.2% doing so often or always (M&nbsp;=&nbsp;3.70/5).</p>
-      <p>This is consistent with Shusterman&rsquo;s (1999) description of how deeply ingrained somatic habits override conscious will: the person does not notice this failure because habitual sense perception is &ldquo;so inadequate and distorted&rdquo; that the intended action feels as though it were performed. Likewise, 54.7% described their typical attention level as low &mdash; either noticing some content but skipping most, or scrolling without stopping at all.</p>
-      <div class="inset-quote">
-        <p>&ldquo;Like, it&rsquo;s just instinct.&rdquo;</p>
-        <cite>&mdash; P4, post-session interview</cite>
-      </div>
-      <h3 style="margin-top:1.5rem">Temporal Unawareness</h3>
-      <p>Participants reported strikingly low temporal awareness during use (M&nbsp;=&nbsp;2.47, SD&nbsp;=&nbsp;1.08), with 62.3% scoring 1 or 2 &mdash; meaning nearly two thirds of the sample felt largely unaware of time passing while scrolling. From a somaesthetic perspective, what is at stake is not merely time management but somatic awareness itself: the capacity to be present in and attentive to one&rsquo;s own bodily experience.</p>
-
-      <table class="corr-table">
-        <thead><tr><th>Correlation</th><th>r</th><th>p</th></tr></thead>
-        <tbody>
-          <tr><td>Perceived control &rarr; Intentional alignment</td><td class="corr-sig">0.56</td><td class="corr-sig">&lt;.001</td></tr>
-          <tr><td>Intentional alignment &rarr; Post-use satisfaction</td><td class="corr-sig">0.591</td><td class="corr-sig">&lt;.001</td></tr>
-          <tr><td>Session worthwhile (M)</td><td>2.25</td><td>&lt;.001</td></tr>
-          <tr><td>Temporal awareness (M)</td><td>2.47</td><td>&lt;.001</td></tr>
-        </tbody>
-      </table>
+      <p>The most striking finding of this study is revealed by the recall rates. Across the five participants who volunteered for the second and third phases of the study, the number of content items viewed during the 15-minute session varied considerably, ranging from 32 to 108 items (M&nbsp;=&nbsp;77.4). Overall recall rates ranged from 6.0% to 43.8%. When calculated as a pooled rate, the overall recall rate was 11.1%. When considering only unprompted recall, the pooled rate was lower at 5.9%, with participants spontaneously recalling approximately 4 items on average regardless of how much content they had viewed. This is alarming since it suggests that the volume of content encountered has little bearing on what the body actually retains. Participants who viewed over 100 items recalled no more spontaneously than those who viewed a third of that amount, pointing not to a failure of memory, but to a failure of engagement. The content passed through the senses without leaving a meaningful trace.</p>
+      <p>However, P4 represents a notable case. With the fewest items viewed (32) and the highest individual recall rate (43.8%), P4&rsquo;s pattern diverges significantly from the rest of the sample. P1, P2, and P3, who viewed between 84 and 108 items, each recalled less than 8% of content overall, with unprompted recall rates between 4.0% and 6.5%. P5, having viewed 62 items, fell between these two clusters with an overall recall rate of 14.5%. Instead of classifying these two participants as outliers, this incident gives this paper its most instructive case. This means that scrolling pace itself may be a significant variable in what the body is able to retain. Those who scrolled more slowly and encountered fewer posts, had more time to dwell on each item, and the recall data reflects this. Especially P4&rsquo;s 43.8% recall rate suggests that the relationship between exposure and retention is not linear, and that the conditions under which content is encountered, such as pace and intentionality, may matter more than the volume of content seen.</p>
+      <p>The survey reports provide a clearer understanding of these recall rates, as the data points to a pattern of use that is largely automatic and purposeless. 81.1% of participants reported opening Instagram out of habit, and 90.6% said they do so without a specific purpose with 64.2% doing so often or always (M&nbsp;=&nbsp;3.70/5). Shusterman describes how deeply ingrained somatic habits override conscious will, and that the person does not even notice this failure because habitual sense perception is &ldquo;so inadequate and distorted&rdquo; (Shusterman, 1999, p. 303) that the intended action feels as if it were performed. Likewise, 54.7% described their typical attention level as low, either noticing some content but skipping most of it, or scrolling through without stopping at all. Surprisingly, multitasking was less prevalent than expected, with only 18.9% reporting that they often or always use Instagram simultaneously with another activity. However, this suggests that low attention during scrolling is not primarily explained by divided attention but rather by the nature of the engagement itself. This points to something inherent to scroll-based platforms by design.</p>
+      <p>Participants reported strikingly low temporal awareness during use (M&nbsp;=&nbsp;2.47, SD&nbsp;=&nbsp;1.08, p&nbsp;&lt;&nbsp;.001), with 62.3% scoring 1 or 2, which means nearly two thirds of the sample felt largely unaware of time passing while scrolling. This finding gains further theoretical weight when considered alongside the correlation between perceived control and intentional alignment (r&nbsp;=&nbsp;0.56, p&nbsp;&lt;&nbsp;.001): participants who felt in control of their use also felt their time on Instagram was purposeful, while those who did not feel in control described their use as mindless and unintentional. Together, these two findings point to the same underlying condition. From a somaesthetic perspective, what is at stake is not merely time management but somatic awareness itself: the capacity to be present in and attentive to one&rsquo;s own bodily experience.</p>
     </div>
     <div class="analysis-block">
-      <h3>The P4 Case: Pace, Intentionality, and Recall</h3>
-      <p>P4 represents the study&rsquo;s most instructive case. With the fewest items viewed (32) and the highest individual recall rate (43.8%), P4&rsquo;s pattern diverges significantly from the rest of the sample. P1, P2, and P3 &mdash; who viewed between 84 and 108 items &mdash; each recalled less than 8% of content overall.</p>
-      <p>Rather than classifying P4 as an outlier, this incident supplies the paper&rsquo;s central empirical argument: <em>scrolling pace may be a more significant variable in retention than volume of content encountered</em>. Those who scrolled more slowly and encountered fewer posts had more time to dwell on each item, and the recall data reflects this.</p>
-      <p>P4&rsquo;s anomalous result is also linked to the study&rsquo;s methodological context. P4 explicitly connected the recording condition to heightened self-awareness and better recall:</p>
-      <div class="inset-quote">
-        <p>&ldquo;I was more aware of myself, which I&rsquo;m not usually... because of the recording and everything. So, I was able to recall more and typically I just scrolled.&rdquo;</p>
-        <cite>&mdash; P4, post-session interview</cite>
-      </div>
-      <p>This is, in Foucault&rsquo;s terms, a <em>panopticon effect</em>: the awareness of being watched produces self-regulation. Crucially, it may offer empirical support for the somaesthetic argument: the absence of an observing gaze appears to be a <em>necessary condition</em> for doomscrolling to function as it does. Introduce awareness &mdash; through a camera, a research protocol, or deliberate somatic practice &mdash; and the behavior changes.</p>
-
-      <h3 style="margin-top:1.5rem">Somatic Absence</h3>
-      <p>Qualitative data reveals a striking somatic absence during use. One participant described the experience as &ldquo;an out of body experience&rdquo; (P1). Another reported no awareness of physical fatigue during the session, only to notice afterward: &ldquo;my eye is so tired and my neck. And my finger too&rdquo; (P5). This delayed recognition is theoretically significant: the body was used, strained, and exhausted, yet remained outside conscious experience until the platform&rsquo;s hold was released.</p>
-    </div>
-  </div>
-
-  <!-- LIKERT BREAKDOWN -->
-  <div class="likert-grid reveal">
-    <div class="likert-card">
-      <h4>During &amp; Post-Session Scores (M, 1&ndash;5)</h4>
-      <div class="likert-row"><div class="likert-label">Content relevance to interests</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill pos" data-w="73"></div></div><div class="likert-val">3.64</div></div></div>
-      <div class="likert-row"><div class="likert-label">Feel present &amp; engaged during use</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill" data-w="61"></div></div><div class="likert-val">3.06</div></div></div>
-      <div class="likert-row"><div class="likert-label">Feel the way I expected after</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill" data-w="56"></div></div><div class="likert-val">2.79</div></div></div>
-      <div class="likert-row"><div class="likert-label">Satisfied after using Instagram</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill" data-w="50"></div></div><div class="likert-val">2.51</div></div></div>
-      <div class="likert-row"><div class="likert-label">Session felt worthwhile</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill" data-w="45"></div></div><div class="likert-val">2.25</div></div></div>
-    </div>
-    <div class="likert-card">
-      <h4>Control &amp; Intentionality Scores (M, 1&ndash;5)</h4>
-      <div class="likert-row"><div class="likert-label">Aware of time spent</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill pos" data-w="73"></div></div><div class="likert-val">3.66</div></div></div>
-      <div class="likert-row"><div class="likert-label">Feel in control of use</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill" data-w="57"></div></div><div class="likert-val">2.87</div></div></div>
-      <div class="likert-row"><div class="likert-label">Use fits life in a way that works</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill" data-w="57"></div></div><div class="likert-val">2.83</div></div></div>
-      <div class="likert-row"><div class="likert-label">Time aligns with intentions</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill" data-w="54"></div></div><div class="likert-val">2.72</div></div></div>
-      <div class="likert-row"><div class="likert-label">Meaningful part of daily routine</div><div class="likert-bar-wrap"><div class="likert-track"><div class="likert-fill" data-w="49"></div></div><div class="likert-val">2.45</div></div></div>
+      <p>The qualitative data reveals more to this picture. Participants did not merely report low awareness; they described the experience of Instagram use as &ldquo;an out of body experience&rdquo; (P1), while another reported having no awareness of physical fatigue during the session, only to notice afterward: &ldquo;my eye is so tired and my neck. And my finger too&rdquo; (P5). This delayed recognition is theoretically significant. The body was not simply ignored, it was used, strained, and exhausted, yet remained outside the participant&rsquo;s conscious experience until the platform&rsquo;s hold on attention was released. From a somaesthetic perspective, this is precisely what Shusterman (1999) identifies as the cost of somatic unintelligence: not the absence of bodily experience, but the failure to attend to it.</p>
+      <p>Likewise, the spatial and postural data paint a consistent picture of Instagram as an activity of bodily withdrawal. 92.5% of participants who took the survey reported using Instagram lying down, which is the posture most associated with rest and passivity. The two most common times of use reinforce this pattern: 79.2% use Instagram in bed before sleep and 60.4% before getting out of bed in the morning. The manner of holding the device is equally telling: 98.1% hold it upright and 94.3% use only one hand, reducing the physical engagement required to a single-handed, vertically oriented grip that demands almost nothing of the body beyond the scrolling thumb. P5 noted that their &ldquo;pinky is tilted a little bit &hellip; because we hold this phone too much&rdquo;, while another participant (P3) said &ldquo;I wouldn&rsquo;t describe what my hands are doing, whether I use only one hand, or whether I&rsquo;m using my two hands together. I don&rsquo;t remember&rdquo;. What was present across all five participants was a shared condition: the body is present, physically engaged in holding, scrolling, and absorbing visual content, yet it remains experientially absent. Neither the fatigue, the stillness, nor the fixed posture registers during the session. It surfaces only after. This is not distraction in the ordinary sense. It is the systematic suspension of somatic self-awareness that Shusterman identifies as the precondition for aesthetic failure: a body used without being lived in.</p>
     </div>
   </div>
 </section>
 
 <!-- DISCUSSION -->
 <section id="discussion">
-  <div class="reveal">
-    <div class="section-label" data-num="06 &middot;">Discussion</div>
-    <h2>The Docile Body,<br>Platform Power, and Somaesthetic Repair</h2>
-    <div class="discussion-block" style="margin-top:2rem">
-      <h3>The Docile Scrolling Body</h3>
-      <p>Foucault (1975) argues that power operates most effectively not through overt coercion but through the organization of space, time, and repetition into bodily routines so normalized they feel natural, even instinctive. Instagram&rsquo;s interface achieves precisely this. The infinite scroll, the algorithmically curated feed, and the frictionless one-thumb operation are not neutral design choices; they are, in Foucault&rsquo;s terms, a disciplinary apparatus. The platform does not need to compel since it has already trained the body to comply.</p>
-      <p>Post-use feelings of the session being worthwhile scored the lowest of all survey items (M&nbsp;=&nbsp;2.25), while satisfaction followed closely (M&nbsp;=&nbsp;2.51). Yet participants continue to return. This suggests that Instagram use has become so automated that the platform does not need to make the session worthwhile to secure the user&rsquo;s continued engagement. The body returns not because it was fulfilled, but because it has been trained to return.</p>
-    </div>
-    <div class="discussion-block">
-      <h3>Somaesthetics as Structural Critique</h3>
-      <p>From the perspective of analytic somaesthetics, this dissatisfaction is not incidental &mdash; nor is it a personal failing. Just as Wysocki and Johnson-Eilola (1999) argue that &ldquo;literacy&rdquo; is often weaponized to locate failure in the individual rather than in the structures that produce it, discourse around doomscrolling framed as a problem of self-control or screen time risks doing the same. The docile scrolling body is not a personal failure; it is a political product.</p>
-    </div>
-    <div class="discussion-block">
-      <h3>Pragmatic Somaesthetics &amp; the P4 Path</h3>
-      <p>Pragmatic somaesthetics proposes methods for somatic improvement. The study&rsquo;s findings suggest that slower scrolling, deliberate attention, and intentionality are not merely desirable attitudes but measurably consequential ones. P4&rsquo;s 43.8% recall rate &mdash; more than four times the pooled average &mdash; was accompanied by greater reported self-awareness. Survey data further supports this: the correlation between intentional alignment and post-use satisfaction was among the strongest in the dataset (r&nbsp;=&nbsp;0.591, p&nbsp;&lt;&nbsp;.001).</p>
-    </div>
+  <div class="section-label reveal" data-num="06 &middot;">Discussion</div>
+  <h2 class="reveal">Discussion</h2>
+  <div class="discussion-block reveal">
+    <p>Shusterman&rsquo;s (1999) somaesthetics centers around a critique of Alexander Baumgarten, the founder of modern aesthetics, who defined the field as the &ldquo;science of sensory cognition&rdquo; but paradoxically excluded actual body from his framework. Shusterman problematizes this &ldquo;sad somatic neglect&rdquo; (1999, p. 300), arguing that rationalist prejudices cast the body as &ldquo;mere machine&rdquo; while religious doctrines degrade it as sinful &ldquo;flesh&rdquo;; thus, narrowing aesthetics into a study of fine art and beauty, stripping the discipline of its original &ldquo;meliorative&rdquo; intent and severing philosophy from genuine bodily engagement. In response to these deficiencies, Shusterman outlines three dimensions of somaesthetics: analytic, pragmatic, and practical somaesthetics. Analytic somaesthetics examines bodily perception and practice, their role in constructing reality, and the sociopolitical forces that shape the body, including norms such as health, beauty, or gender. Shusterman often cites Foucault to highlight power and social hierarchies to discuss how body is rendered a &ldquo;docile&rdquo; site of power. The body is used as an instrument to reflect and sustain these existing social forces and hierarchies; thus, &ldquo;entire ideologies of domination can thus be covertly materialized and preserved by encoding them in somatic norms&rdquo; (Shusterman, 1999, p. 303).</p>
   </div>
-  <div class="reveal">
-    <div class="big-pullquote">&ldquo;The docile scrolling body is not a personal failure. It is a political product &mdash; trained into compliance by a disciplinary apparatus designed to operate beneath the threshold of conscious attention.&rdquo;</div>
-    <div class="framework-cards">
-      <div class="fw-card">
-        <span class="fw-tag">Analytic Somaesthetics</span>
-        <h4>Names the Problem</h4>
-        <p>Examines how platform design renders the body docile, encoding ideologies of passive consumption into somatic norms. Applies Foucault&rsquo;s analysis of disciplinary power to the scrolling interface.</p>
-      </div>
-      <div class="fw-card">
-        <span class="fw-tag">Pragmatic Somaesthetics</span>
-        <h4>Proposes Methods</h4>
-        <p>Suggests representational and experiential approaches to improving the quality of the scrolling encounter &mdash; slower pace, intentional attention, deliberate purpose. Empirically supported by P4&rsquo;s recall data and the intentional alignment correlation (r = 0.591).</p>
-      </div>
-      <div class="fw-card">
-        <span class="fw-tag">Practical Somaesthetics</span>
-        <h4>Demands Embodiment</h4>
-        <p>Moves beyond analysis to concrete bodily change. Illustrated by P4&rsquo;s post-interview resolution to stop using Instagram lying down &mdash; a small but telling act of somatic reclamation requiring no therapeutic program or platform redesign.</p>
-      </div>
-    </div>
+  <div class="big-pullquote reveal">&ldquo;Like, it&rsquo;s just instinct.&rdquo; &mdash; P4</div>
+  <div class="discussion-block reveal">
+    <p>Foucault (1975) argues in Discipline and Punish that power operates most effectively not through overt coercion but through the organization of space, time, and repetition into bodily routines so normalized they feel natural, even instinctive. Instagram&rsquo;s interface achieves precisely this. The infinite scroll, the algorithmically curated feed, and the frictionless one-thumb operation are not neutral design choices; they are, in Foucault&rsquo;s terms, a disciplinary apparatus. The platform does not need to compel since it has already trained the body to comply. Post-use feelings of engagement being worthwhile scored the lowest of all survey items (M&nbsp;=&nbsp;2.25, SD&nbsp;=&nbsp;0.96, p&nbsp;&lt;&nbsp;.001) while post-use satisfaction followed closely (M&nbsp;=&nbsp;2.51, SD&nbsp;=&nbsp;1.03, p&nbsp;&lt;&nbsp;.01). Yet despite these outcomes, participants continue to return. This suggests that Instagram use has become so automated that the platform does not need to make the session worthwhile or satisfying to secure the user&rsquo;s continued engagement. The body returns not because it was fulfilled, but because it has been trained to return. This is a pattern that Foucault (1975) would recognize not as free choice but as the quiet operation of disciplinary power, and that Shusterman (1999) would identify as the precise condition under which aesthetic experience fails: stimulation without satisfaction, engagement without fulfillment. From the perspective of analytic somaesthetics, this dissatisfaction is not incidental, nor is it a personal failing of individual users. Just as Wysocki and Johnson-Eilola (1999) argue that &ldquo;literacy&rdquo; is often weaponized to locate failure in the individual rather than in the structures that produce it, the discourse around doomscrolling, framed as a problem of self-control, screen time management, or digital literacy, risks doing the same. The docile scrolling body is not a personal failure; it is a political product.</p>
+  </div>
+  <div class="discussion-block reveal">
+    <p>Pragmatist somaesthetics, on the other hand, offers a highly prescriptive perspective. It proposes methods for somatic improvement classified as either representational or experiential. Representational somaesthetics is concerned with the body&rsquo;s external appearance while the latter is more focused on the quality of inner lived experience. Together, these offer a more informed approach to intentional engagement, in this case, with Instagram&rsquo;s ephemeral consumption itself. This study&rsquo;s findings suggest that slower scrolling, deliberate attention, and intentionality are not merely desirable attitudes but measurably consequential ones. P4, who scrolled more slowly and encountered fewer posts (32 items), achieved an overall recall rate of 43.8%, more than four times the pooled average of 11.1%. This was accompanied by greater reported self-awareness during the session and, crucially, a concrete behavioral intention formed in its aftermath. Survey data further supports this: the correlation between intentional alignment and post-use satisfaction was among the strongest in the dataset (r&nbsp;=&nbsp;0.591, p&nbsp;&lt;&nbsp;.001). From a pragmatic somaesthetic perspective, cultivating these attitudes, slowing down, attending to the body, approaching the platform with purpose rather than reflex, represents a viable and empirically supported path toward reclaiming the aesthetic potential of an experience that platform design has systematically barred.</p>
   </div>
 </section>
 
 <!-- CONCLUSION -->
 <section id="conclusion">
   <div class="section-label reveal" data-num="07 &middot;">Conclusion</div>
-  <h2 class="reveal">From Analysis<br>to Embodied Action</h2>
+  <h2 class="reveal">Conclusion</h2>
   <div class="conclusion-body reveal">
-    <div class="conclusion-text">
-      <p>Analytic, pragmatic, and practical somaesthetics together offer a layered perspective on how the body engages with Instagram &mdash; a scroll-based platform that occupies a vast and growing portion of daily life. Each dimension contributes something distinct: the analytic names the problem and its political conditions; the pragmatic proposes methods for improvement; and the practical demands that those methods actually be embodied.</p>
-      <p>The data from this study are unambiguous in their direction: sessions are felt to be worthless, yet users return; content is consumed in volume, yet almost none of it is retained; the body is exhausted by the encounter, yet this fatigue goes unnoticed until after the session ends. These are not incidental findings. They are symptoms of a systematic suspension of somatic self-awareness.</p>
-      <p>Notably, participants had already begun the practical dimension without being asked. Simply being invited to reflect on their bodily experience during the interview initiated a shift: P3 noticed their posture mid-session once attention was directed toward it; P4 remarked that thinking about posture and body experience &ldquo;is something that is going to stay with me because I&rsquo;m usually not really aware of it.&rdquo;</p>
-      <p>Most strikingly, P4 concluded the session by resolving not to use Instagram lying down anymore. Having been brought into awareness of how bodily position during scrolling shaped what they attended to and what they retained, P4 made a deliberate decision to change it. This is practical somaesthetics in its most immediate form: not a therapeutic program or a platform redesign, but a moment of embodied reflection that produced a concrete intention to engage differently.</p>
-      <p>The somaesthetic take on doomscrolling need not remain an academic argument. It can function simultaneously as a framework for personal betterment, a basis for communal practice, and a political demand: one that shifts the burden of dissatisfaction away from the individual user and onto the structures that have shaped the scrolling body in the first place.</p>
-    </div>
-    <div>
-      <div class="takeaway-list">
-        <div class="takeaway"><span class="tk-num">Finding 01</span><h4>Memory is not the metric</h4><p>High engagement volume does not translate to recall. The pooled recall rate of 11.1% &mdash; and 5.9% unprompted &mdash; demonstrates that content passes through the senses without leaving a meaningful trace.</p></div>
-        <div class="takeaway"><span class="tk-num">Finding 02</span><h4>Affect outlasts content</h4><p>Negative emotional residue persists after specific memories have faded. Guilt, dissatisfaction, and perceived time-waste operate on a slower decay curve than episodic recall.</p></div>
-        <div class="takeaway"><span class="tk-num">Finding 03</span><h4>Pace is a cognitive variable</h4><p>P4&rsquo;s 43.8% recall rate demonstrates that the relationship between exposure and retention is non-linear. Intentionality and scrolling pace matter more than volume of content seen.</p></div>
-        <div class="takeaway"><span class="tk-num">Finding 04</span><h4>Awareness changes behavior</h4><p>The panopticon effect suggests that introducing somatic awareness &mdash; whether through a camera, a protocol, or deliberate practice &mdash; is itself a meaningful intervention in habitual scrolling behavior.</p></div>
-      </div>
-    </div>
+    <p>Shusterman (1999) has an implicit concern, mostly noted in the footnotes, that academic philosophy tends to privilege theory at the expense of practical, lived engagement. I share this concern. Thus, I find somaesthetics valuable in terms of addressing all the systemic, theoretical and practical dimensions of Instagram use and its effects. Thus, as a concluding remark, I would like to address practical somaesthetics, which focuses on the actual execution of disciplined bodywork. Practical somaesthetics can be thought of as the final dimension of somaesthetics, emphasizing the concrete activity of &ldquo;doing&rdquo;. It is the lived, embodied enactment of somatic care. In Shusterman&rsquo;s words, for practical somaesthetics &ldquo;the less said the better, if this means the more work actually done&rdquo; (Shusterman, 1999, p. 307). Notably, participants had already begun this process without a lot has been said. Simply being asked to reflect on their bodily experience during the interview initiated a shift: P3 noted becoming aware of their posture mid-session once attention was directed toward it, and P4 remarked that thinking about posture and body experience &ldquo;is something that is going to stay with me because I&rsquo;m usually not really aware of it&rdquo;. Most strikingly, P4 concluded the session by resolving not to use Instagram lying down anymore, a small but telling act of somatic reclamation. Having been brought into awareness of how their bodily position during scrolling shaped what they attended to and what they retained, P4 made a deliberate decision to change it. This is practical somaesthetics in its most immediate form: not a therapeutic program or a platform redesign, but a moment of embodied reflection that produced a concrete intention to engage differently.</p>
+    <p>Analytic, pragmatic, and practical somaesthetics together offer a layered perspective on how the body engages with Instagram, a scroll-based platform that occupies a vast and growing portion of daily life. Each dimension contributes something distinct: the analytic names the problem and its political conditions, the pragmatic proposes methods for improvement, and the practical demands that those methods actually be embodied. When implemented more purposefully, somaesthetic attention has the potential to cultivate more intentional engagement with scroll-based platforms and, in doing so, to meaningfully improve both the affective and cognitive outcomes of that engagement. The somaesthetic take on doomscrolling need not remain an academic argument. It can function simultaneously as a framework for personal betterment, a basis for communal practice, and a political demand: one that shifts the burden of dissatisfaction away from the individual user and onto the structures that have shaped the scrolling body in the first place.</p>
   </div>
+</section>
 
+<!-- LIMITATIONS -->
+<section id="limitations">
+  <div class="section-label reveal" data-num="08 &middot;">Limitations</div>
+  <h2 class="reveal">Limitations</h2>
   <div class="limitations-box reveal">
-    <h3>Limitations</h3>
-    <p>The sample is small (n&nbsp;=&nbsp;5 for engagement sessions) and comprised of volunteers, limiting generalizability beyond the immediate sample. The naturalistic character of habitual Instagram use cannot be fully replicated even when the setting is carefully controlled. The absence of demographic variables such as gender was a deliberate choice, though such variables may have yielded additional nuance.</p>
-    <p>Video recording introduced an observer effect: participants reported that awareness of being recorded altered the scrolling experience. P4&rsquo;s anomalous recall is directly attributed to this effect. While this complicates internal validity, it simultaneously offers a theoretically productive finding: the panopticon effect may provide empirical support for the pragmatic somaesthetic argument that introducing awareness is itself a behavioral intervention.</p>
-    <p>As an exploratory pilot, the findings are necessarily preliminary. They are intended to establish patterns worth pursuing and to demonstrate the significance of a somaesthetic framework for studying platform-based scrolling behavior.</p>
+    <p>This study carries several limitations that should be acknowledged. The sample is small and comprised of volunteers, and while certain conditions were held constant, such as the interview setting including the room and the chair, the naturalistic character of habitual Instagram use cannot be fully replicated in a controlled environment. The absence of demographic variables such as gender was deliberate choice, though such variables may have yielded additional nuance. Also, video recordings were not used for coding.</p>
+    <p>Regardless, their presence in the study environment constitutes a finding in itself. Participants reported that awareness of being observed induced a degree of somatic self-consciousness that altered the scrolling experience producing, in at least one case, measurably higher recall. P4 explicitly connected the recording condition to their heightened awareness and better recall: &ldquo;I was more aware of myself, which I&rsquo;m not usually... because of the recording and everything. So, I was able to recall more and typically I just scrolled&rdquo;. Furthermore, P5 noted that awareness of the camera made them linger less on certain content, and P2 reflected that being recorded made the session feel different from their usual experience. This is, in Foucault&rsquo;s terms, a panopticon effect: the awareness of being watched produces self-regulation. Therefore, the panopticon effect may offer empirical support for the somaesthetic argument which might suggest that the absence of an observing gaze is a necessary condition for doomscrolling to function as it does. The platform depends on the user&rsquo;s inattention to their own body. Introduce awareness whether through a camera, a research protocol, or deliberate somatic practice, and the behavior changes. This is precisely the intervention that pragmatic somaesthetics would prescribe.</p>
+    <p>As an exploratory pilot, the findings are necessarily preliminary and cannot be generalized beyond the sample. They are intended to establish patterns worth pursuing and to demonstrate the significance of a somaesthetic framework for studying platform-based scrolling behavior.</p>
   </div>
 </section>
 
 <!-- REFERENCES -->
 <section id="references">
-  <div class="section-label reveal" data-num="08 &middot;">References</div>
+  <div class="section-label reveal" data-num="09 &middot;">References</div>
   <h2 class="reveal">Works Cited</h2>
   <div class="ref-list reveal">
     <div class="ref-item">Foucault, M. (1975). <em>Discipline and punish: The birth of the prison</em> (A. Sheridan, Trans.). Pantheon Books.</div>
@@ -791,14 +667,14 @@
 
 <!-- TEAM -->
 <section id="team">
-  <div class="section-label reveal" data-num="09 &middot;">Research Team</div>
+  <div class="section-label reveal" data-num="10 &middot;">Research Team</div>
   <h2 class="reveal">Authors &amp; Contributors</h2>
   <div class="team-grid reveal">
     <div class="team-card">
       <div class="team-avatar" style="background:var(--ink)">ZC</div>
       <div>
         <div class="team-name">Zeynep Can</div>
-        <div class="team-role">Principal Investigator &amp; Lead Author</div>
+        <div class="team-role">Author</div>
         <div class="team-affil">Teachers College, Columbia University</div>
       </div>
     </div>
@@ -823,7 +699,6 @@
 </footer>
 
 <script>
-/* ── MOBILE MENU ── */
 function toggleMenu() {
   document.getElementById('hamburger').classList.toggle('open');
   document.getElementById('mobileMenu').classList.toggle('open');
@@ -833,7 +708,6 @@ function closeMenu() {
   document.getElementById('mobileMenu').classList.remove('open');
 }
 
-/* ── CITATIONS ── */
 const citations = {
   apa: `Can, Z. (2026). Docile thumbs: A somaesthetic inquiry — Cognitive and affective dimensions of Instagram use. Teachers College, Columbia University. https://doi.org/10.xxxx/placeholder`,
   mla: `Can, Zeynep. "Docile Thumbs: A Somaesthetic Inquiry — Cognitive and Affective Dimensions of Instagram Use." Teachers College, Columbia University, 2026. https://doi.org/10.xxxx/placeholder.`,
@@ -858,7 +732,6 @@ function copyCite() {
   });
 }
 
-/* ── FILTERS ── */
 function setFilter(hyp, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -867,12 +740,10 @@ function setFilter(hyp, btn) {
   });
 }
 
-/* ── CHART.JS ── */
 const A = '#c94f2a', A2 = '#3a6b8a', G = 'rgba(14,13,11,0.08)';
 Chart.defaults.font.family = "'DM Sans', sans-serif";
 Chart.defaults.color = '#7a7368';
 
-// How open
 new Chart(document.getElementById('chartOpenHow'), {
   type: 'bar',
   data: {
@@ -886,7 +757,6 @@ new Chart(document.getElementById('chartOpenHow'), {
   }
 });
 
-// Session duration
 new Chart(document.getElementById('chartSession'), {
   type: 'doughnut',
   data: {
@@ -899,7 +769,6 @@ new Chart(document.getElementById('chartSession'), {
   }
 });
 
-// Recall: exposure vs recalled
 new Chart(document.getElementById('chartRecall'), {
   type: 'bar',
   data: {
@@ -916,7 +785,6 @@ new Chart(document.getElementById('chartRecall'), {
   }
 });
 
-// Likert post-session
 new Chart(document.getElementById('chartLikert'), {
   type: 'bar',
   data: {
@@ -930,7 +798,6 @@ new Chart(document.getElementById('chartLikert'), {
   }
 });
 
-// Posture
 new Chart(document.getElementById('chartPosture'), {
   type: 'bar',
   data: {
@@ -944,7 +811,6 @@ new Chart(document.getElementById('chartPosture'), {
   }
 });
 
-// Time of day
 new Chart(document.getElementById('chartTime'), {
   type: 'bar',
   data: {
@@ -958,19 +824,16 @@ new Chart(document.getElementById('chartTime'), {
   }
 });
 
-/* ── REVEAL ── */
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-/* ── STAT BARS ── */
 const bObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.style.width = e.target.dataset.w + '%'; bObs.unobserve(e.target); } });
 }, { threshold: 0.5 });
 document.querySelectorAll('.stat-bar[data-w]').forEach(b => bObs.observe(b));
 
-/* ── LIKERT BARS ── */
 const lObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.style.width = e.target.dataset.w + '%'; lObs.unobserve(e.target); } });
 }, { threshold: 0.3 });
